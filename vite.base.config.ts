@@ -81,7 +81,8 @@ export function pluginHotRestart(command: 'reload' | 'restart'): Plugin {
       if (command === 'reload') {
         for (const server of Object.values(process.viteDevServers)) {
           // Preload scripts hot reload.
-          server.ws.send({ type: 'full-reload' });
+          //server.ws.send({ type: 'full-reload' }); //原来的代码因为：ws被弃用了
+          server.hot.send({type: 'full-reload'});
         }
       } else {
         // Main process hot restart.
