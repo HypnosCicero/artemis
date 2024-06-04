@@ -1,3 +1,15 @@
+import '@src/index.css';
+
+import { createRoot } from "react-dom/client";
+import App from '@src/components/App';
+
+// console.log('👋 This message is being logged by "renderer.ts", included via Vite');
+const domNode = document.getElementById('root');
+const root = createRoot(domNode);
+root.render(<App />);
+
+
+
 /**
  * This file will automatically be loaded by vite and run in the "renderer" context.
  * To learn more about the differences between the "main" and the "renderer" context in
@@ -25,12 +37,3 @@
  *  });
  * ```
  */
-
-import './index.css';
-import { createRoot } from "react-dom/client";
-import App from './components/App';
-
-// console.log('👋 This message is being logged by "renderer.ts", included via Vite');
-const domNode = document.getElementById('root');
-const root = createRoot(domNode);
-root.render(<App/>);
